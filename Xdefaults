@@ -1,0 +1,8 @@
+URxvt*foreground: White
+urxvt*transparent: true
+urxvt*shading: 90
+URxvt*scrollBar:  false
+
+URxvt.font: 9x15bold
+URxvt.letterSpace: 0
+

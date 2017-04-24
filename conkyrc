@@ -1,0 +1,77 @@
+# Conky settings #
+update_interval 2
+double_buffer yes
+
+# Window specifications #
+
+minimum_size 268 600 
+alignment middle_right 
+#own_window yes
+own_window_type normal
+#own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 100
+#own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+#own_window_type normal
+#own_window_transparent no
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 0
+#border_width 200
+#border_outer_margin 0 
+#pad_percents 20
+gap_x 150
+gap_y 50
+own_window_class Conky
+own_window_type override
+background yes
+
+# Text settings #
+use_xft yes
+xftalpha 0
+xftfont Droid Sans:size = 12
+text_buffer_size 256
+override_utf8_locale yes
+
+# Useful shortenings #
+short_units yes
+pad_percents  2
+top_name_width 30
+
+
+TEXT
+${color 00b1ff}$nodename     ${alignc}$sysname $kernel ${alignr}$color${time %l:%M:%p}
+
+${color #00b1ff}${exec  screenfetch | grep -A 0 CPU | cut -c 69-86} ${alignr}${color #00b1ff}Uptime:$color $uptime 
+${color 00b1ff}Core 1 : ${color lightgrey}${cpu cpu0}% ${offset 80} ${color 00b1ff}Core 2 : ${color lightgrey}${cpu cpu1}% 
+${color 00b1ff}${cpugraph cpu0 32,155 00b1ff eeeeee} ${alignr}${color 00b1ff}${cpugraph cpu1 32,155 00b1ff eeeeee}
+${color 00b1ff}${freq_g cpu 0}Ghz          ${color lightgrey}${execi 8 sensors | grep -A 0 'Core 0' | cut -c 17-23}     ${color 00b1ff}${freq_g cpu 1}Ghz          ${color lightgrey}${execi 8 sensors | grep -A 0 'Core 1' | cut -c 17-23}
+${color 00b1ff}Core 3 : ${color lightgrey}${cpu cpu2}% ${offset 80} ${color 00b1ff}Core 4 : ${color lightgrey}${cpu cpu3}% 
+${color 00b1ff}${cpugraph cpu2 32,155 00b1ff eeeeee} ${alignr}${color 00b1ff}${cpugraph cpu3 32,155 00b1ff eeeeee}
+${color 00b1ff}${freq_g cpu 2}Ghz          ${color lightgrey}${execi 8 sensors | grep -A 0 'Core 2' | cut -c 17-23}     ${color 00b1ff}${freq_g cpu 3}Ghz          ${color lightgrey}${execi 8 sensors | grep -A 0 'Core 3' | cut -c 17-23}
+${color #00b1ff}Procs:$color $processes   ${color #00b1ff}Run:$color $running_processes ${color #00b1ff}  MB : ${color lightgrey}${execi 8 sensors | grep -A 1 'temp1:' | cut -c 16-23 | tr '\n' ' ' | cut -c -16 }
+
+${color #00b1ff}Top Processes:
+${color #00b1ff}Name  ${alignr}PID CPU% MEM%
+$color ${top name 1} ${alignr}${top pid 1}  ${top cpu 1}  ${top mem 1}
+$color ${top name 2} ${alignr}${top pid 2}  ${top cpu 2}  ${top mem 2}
+$color ${top name 3} ${alignr}${top pid 3}  ${top cpu 3}  ${top mem 3}
+${color #00b1ff}Mem usage
+$color ${top_mem name 1} ${alignr}${top_mem pid 1}  ${top_mem cpu 1}  ${top_mem mem 1}
+$color ${top_mem name 2} ${alignr}${top_mem pid 2}  ${top_mem cpu 2}  ${top_mem mem 2}
+$color ${top_mem name 3} ${alignr}${top_mem pid 3}  ${top_mem cpu 3}  ${top_mem mem 3}
+
+${color 00b1ff}Ram : ${color lightgrey}$memperc% ${offset 80} ${color 00b1ff}Disk I/O: $color${diskio} 
+${color #00b1ff}${memgraph 0 32,155 00b1ff eeeeee} $alignr${color #00b1ff}${diskiograph 32,155 00b1ff eeeeee 750}
+${color #00b1ff}Swap ${color #00b1ff} ${swapbar}  
+
+${color #42AE4A}nvda
+
+${color #00b1ff}Net Down:$color ${downspeed eth0} k/s      ${color #00b1ff}Net Up:$color ${upspeed eth0} k/s
+${color #00b1ff}${downspeedgraph eth0 32,155 104E8B 00b1ff} $alignr${color #00b1ff}${upspeedgraph eth0 32,155 104E8B 00b1ff}
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+[
+    {
+        "clean": [
+            "~"
+        ]
+    },
+
+    {
+        "link": {
+            "~/.i3":"i3",
+            "~/.xinitrc":"xinitrc",
+            "~/.Xdefaults":"Xdefaults",
+            "~/.Xresources":"Xresources",
+            "~/.gitconfig":"gitconfig",
+            "~/.conkyrc":"conkyrc",
+            "~/.vimrc":"vimrc"
+        }
+    },
+
+    {
+        "shell": []
+    }
+]

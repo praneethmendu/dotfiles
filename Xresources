@@ -1,0 +1,9 @@
+*foreground :  #ffffff
+*background :  #333333
+*faceSize : 20
+
+
+rofi.color-enabled: true
+rofi.color-window: #777777, #777777, #333333
+rofi.color-normal: #777777, #ffffff, #777777, #333333, #ffffff
+

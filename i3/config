@@ -200,25 +200,21 @@ client.unfocused $black $black $white
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 # Program Workspaces
-  assign [class="Google-chrome"] workspace  2:  
-  assign [class="Leafpad"] workspace 1:  
+#  assign [class="Google-chrome"] workspace  2:  
+#  assign [class="Leafpad"] workspace 1:  
   assign [class="i3-sensible-terminal"] workspace $ws6
 
 for_window [class="i3-sensible-terminal"] floating enable
 
 
 # autostart programs
-exec_always albert 
+exec_always albert
 exec_always feh --randomize --bg-fill ~/wallpapers/*
 exec conky
 
-
-for_window [class="Leafpad"] floating enable
-#exec_always leafpad notes
-exec i3-msg 'resize grow left 300 px; resize shrink right 200 px; exec /usr/bin/leafpad notes'
-#i3-msg 'resize grow left 300 px; resize shrink right 200 px'
-exec google-chrome-stable
-
+exec lxterminal --command="/home/mendu/auto_eth/eth.sh"
+exec lxterminal --command="python3 /home/mendu/fan/fanpow.py"
+#exec lxterminal --command="python3 /home/mendu/zecminer/autom.py"
 
 
 # i3-config-wizard will not launch if there already is a config file

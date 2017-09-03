@@ -13,7 +13,8 @@
             "~/.Xresources":"Xresources",
             "~/.gitconfig":"gitconfig",
             "~/.conkyrc":"conkyrc",
-            "~/.vimrc":"vimrc"
+            "~/.vimrc":"vimrc",
+	    "~/.config/lxsession/LXDE":"LXDE"
         }
     },
 
